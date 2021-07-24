@@ -1,4 +1,4 @@
-package com.callforcode.resources.exceptions;
+package com.callforcode.eluf.resources.exceptions;
 
 import java.io.Serializable;
 
