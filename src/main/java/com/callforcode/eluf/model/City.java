@@ -22,17 +22,17 @@ public class City implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "city_id")
-	private Estate estate;
+	private State state;
 
 	public City() {
 
 	}
 
-	public City(Integer id, String name, Estate estate) {
+	public City(Integer id, String name, State state) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.estate = estate;
+		this.state = state;
 	}
 	public Integer getId() {
 		return id;
@@ -50,12 +50,12 @@ public class City implements Serializable {
 		this.name = name;
 	}
 
-	public Estate getEstate() {
-		return estate;
+	public State getState() {
+		return state;
 	}
 
-	public void setEstado(Estate estate) {
-		this.estate = estate;
+	public void setState(State state) {
+		this.state = state;
 	}
 
 	@Override
