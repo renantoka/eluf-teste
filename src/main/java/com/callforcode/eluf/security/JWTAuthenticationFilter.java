@@ -39,7 +39,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		try {
 			CredentialsDTO creds = new ObjectMapper().readValue(req.getInputStream(), CredentialsDTO.class);
 
-			UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(creds.getEmail(),
+			UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(creds.getMail(),
 					creds.getPassword(), new ArrayList<>());
 
 			Authentication auth = authenticationManager.authenticate(authToken);
@@ -73,7 +73,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		private String json() {
 			long date = new Date().getTime();
 			return "{\"timestamp\": " + date + ", " + "\"status\": 401, " + "\"error\": \"Not authorized\", "
-					+ "\"message\": \"Invalid email or password\", " + "\"path\": \"/login\"}";
+					+ "\"message\": \"Invalid mail or password\", " + "\"path\": \"/login\"}";
 		}
 	}
 	

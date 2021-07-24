@@ -7,11 +7,11 @@ import com.callforcode.eluf.model.Order;
 
 public interface MailService {
 
-	void sendOrderConfirmationEmail(Order obj);
+	void sendOrderConfirmationMail(Order obj);
 
-	void sendEmail(SimpleMailMessage msg);
+	void sendMail(SimpleMailMessage msg);
 	
-	void sendNewPasswordEmail(Client client, String newPass);
+	void sendNewPasswordMail(Client client, String newPass);
 
 	
 }

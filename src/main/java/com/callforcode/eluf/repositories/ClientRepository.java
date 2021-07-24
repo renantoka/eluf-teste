@@ -11,6 +11,6 @@ import com.callforcode.eluf.model.Client;
 public interface ClientRepository extends JpaRepository<Client, Integer> {
 
 	@Transactional(readOnly=true)
-	Client findByEmail(String email);
+	Client findByMail(String mail);
 
 }

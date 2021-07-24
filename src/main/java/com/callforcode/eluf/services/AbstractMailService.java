@@ -8,7 +8,7 @@ import org.springframework.mail.SimpleMailMessage;
 import com.callforcode.eluf.model.Client;
 import com.callforcode.eluf.model.Order;
 
-public abstract class AbstractEmailService implements MailService {
+public abstract class AbstractMailService implements MailService {
 
 	@Value("${default.sender}")
 	private String sender;
@@ -19,14 +19,14 @@ public abstract class AbstractEmailService implements MailService {
 	private JavaMailSender javaMailSender;*/
 
 	@Override
-	public void sendOrderConfirmationEmail(Order obj) {
+	public void sendOrderConfirmationMail(Order obj) {
 		SimpleMailMessage sm = prepareSimpleMailMessageFromOrder(obj);
-		sendEmail(sm);
+		sendMail(sm);
 	}
 
 	protected SimpleMailMessage prepareSimpleMailMessageFromOrder(Order obj) {
 		SimpleMailMessage sm = new SimpleMailMessage();
-		sm.setTo(obj.getClient().getEmail());
+		sm.setTo(obj.getClient().getMail());
 		sm.setFrom(sender);
 		sm.setSubject("Order confirmed! Code: " + obj.getId());
 		sm.setSentDate(new Date(System.currentTimeMillis()));
@@ -35,14 +35,14 @@ public abstract class AbstractEmailService implements MailService {
 
 	}
 
-	public void sendNewPasswordEmail(Client client, String newPass) {
-		SimpleMailMessage sm = prepareNewPasswordEmail(client, newPass);
-		sendEmail(sm);
+	public void sendNewPasswordMail(Client client, String newPass) {
+		SimpleMailMessage sm = prepareNewPasswordMail(client, newPass);
+		sendMail(sm);
 	}
 
-	private SimpleMailMessage prepareNewPasswordEmail(Client client, String newPass) {
+	private SimpleMailMessage prepareNewPasswordMail(Client client, String newPass) {
 		SimpleMailMessage sm = new SimpleMailMessage();
-		sm.setTo(client.getEmail());
+		sm.setTo(client.getMail());
 		sm.setFrom(sender);
 		sm.setSubject("Request for a new password");
 		sm.setSentDate(new Date(System.currentTimeMillis()));

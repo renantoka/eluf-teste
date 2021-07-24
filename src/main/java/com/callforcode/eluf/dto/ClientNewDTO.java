@@ -18,8 +18,8 @@ public class ClientNewDTO implements Serializable {
 	private String name;
 
 	@NotEmpty(message = "Please, fill in the required fields")
-	@Email(message = "Email inválido")
-	private String email;
+	@Email(message = "Mail inválido")
+	private String mail;
 
 	@NotEmpty(message = "Please, fill in the required fields")
 	private String cpfOrCnpj;
@@ -58,12 +58,12 @@ public class ClientNewDTO implements Serializable {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
 	public String getCpfOrCnpj() {

@@ -24,17 +24,17 @@ public class AuthService {
 
 	private Random rand = new Random();
 
-	public void sendNewPassword(String email) {
+	public void sendNewPassword(String mail) {
 
-		Client client = clientRepository.findByEmail(email);
+		Client client = clientRepository.findByMail(mail);
 		if (client == null) {
-			throw new ObjectNotFoundException("Email não encontrado");
+			throw new ObjectNotFoundException("Mail não encontrado");
 		}
 		String newPass = newPassWord();
 		client.setPassword(pe.encode(newPass));
 
 		clientRepository.save(client);
-		mailService.sendNewPasswordEmail(client, newPass);
+		mailService.sendNewPasswordMail(client, newPass);
 
 	}
 

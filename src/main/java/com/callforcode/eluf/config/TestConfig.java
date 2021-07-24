@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 
 import com.callforcode.eluf.services.DBService;
 import com.callforcode.eluf.services.MailService;
-import com.callforcode.eluf.services.MockEmailService;
+import com.callforcode.eluf.services.MockMailService;
 
 
 
@@ -28,7 +28,7 @@ public class TestConfig {
 
 	@Bean
 	public MailService mailService() {
-		return new MockEmailService();
+		return new MockMailService();
 	}
 
 	

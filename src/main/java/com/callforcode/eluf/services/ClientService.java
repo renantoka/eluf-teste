@@ -94,13 +94,13 @@ public class ClientService {
 	public List<Client> findAll() {
 		return repo.findAll();
 	}
-	public Client findByEmail(String email) {
+	public Client findByMail(String mail) {
 		UserSS user = UserService.authenticated();
-		if (user == null || !user.hasRole(Profile.ADMIN) && !email.equals(user.getUsername())) {
+		if (user == null || !user.hasRole(Profile.ADMIN) && !mail.equals(user.getUsername())) {
 			throw new AuthorizationException("Access denied");
 		}
 
-		Client obj = repo.findByEmail(email);
+		Client obj = repo.findByMail(mail);
 		if (obj == null) {
 			throw new ObjectNotFoundException(
 					"Object not found! Id: " + user.getId() + ", Type: " + Client.class.getName());
@@ -115,12 +115,12 @@ public class ClientService {
 	}
 
 	public Client fromDTO(ClientDTO objDto) {
-		return new Client(objDto.getId(), objDto.getName(), objDto.getEmail(), null, null, null);
+		return new Client(objDto.getId(), objDto.getName(), objDto.getMail(), null, null, null);
 	}
 
 	public Client fromDTO(ClientNewDTO objDto) {
 
-		Client cli = new Client(null, objDto.getName(), objDto.getEmail(), objDto.getCpfOrCnpj(),
+		Client cli = new Client(null, objDto.getName(), objDto.getMail(), objDto.getCpfOrCnpj(),
 				TypeClient.toEnum(objDto.getType()), pe.encode(objDto.getPassword()));
 
 		City cid = new City(objDto.getCityId(), null, null);
@@ -142,7 +142,7 @@ public class ClientService {
 
 	private void updateData(Client newObj, Client obj) {
 		newObj.setName(obj.getName());
-		newObj.setEmail(obj.getEmail());
+		newObj.setMail(obj.getMail());
 	}
 	
 	public URI uploadProfilePicture(MultipartFile multipartFile) {

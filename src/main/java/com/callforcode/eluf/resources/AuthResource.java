@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.callforcode.eluf.dto.EmailDTO;
+import com.callforcode.eluf.dto.MailDTO;
 import com.callforcode.eluf.security.JWTUtil;
 import com.callforcode.eluf.security.UserSS;
 import com.callforcode.eluf.services.AuthService;
@@ -38,8 +38,8 @@ public class AuthResource {
 	
 	//Esqueci minha senha
 	@RequestMapping(value="/forgot", method=RequestMethod.POST)
-	public ResponseEntity<Void> forgot(@Valid @RequestBody EmailDTO objDto) {
-	service.sendNewPassword(objDto.getEmail());
+	public ResponseEntity<Void> forgot(@Valid @RequestBody MailDTO objDto) {
+	service.sendNewPassword(objDto.getMail());
 	return ResponseEntity.noContent().build();
 	}
 

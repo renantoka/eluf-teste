@@ -19,13 +19,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	private ClientRepository repo;
 	
 	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		Client cli = repo.findByEmail(email);
-		if(email == null) {
-			throw new UsernameNotFoundException(email); 
+	public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
+		Client cli = repo.findByMail(mail);
+		if(mail == null) {
+			throw new UsernameNotFoundException(mail); 
 		}
 		
-		return new UserSS(cli.getId(), cli.getEmail(), cli.getPassword(), cli.getProfiles());
+		return new UserSS(cli.getId(), cli.getMail(), cli.getPassword(), cli.getProfiles());
 	}
 
 }

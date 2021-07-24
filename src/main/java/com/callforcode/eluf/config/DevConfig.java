@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Profile;
 
 import com.callforcode.eluf.services.DBService;
 import com.callforcode.eluf.services.MailService;
-import com.callforcode.eluf.services.SmtpEmailService;
+import com.callforcode.eluf.services.SmtpMailService;
 
 
 
@@ -35,8 +35,8 @@ public class DevConfig {
 	}
 	
 	@Bean
-	public MailService emailService() {
-		return new SmtpEmailService();
+	public MailService mailService() {
+		return new SmtpMailService();
 	}
 
 }

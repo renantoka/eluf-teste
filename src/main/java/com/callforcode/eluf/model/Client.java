@@ -31,7 +31,7 @@ public class Client implements Serializable {
 	private String name;
 
 	@Column(unique = true)
-	private String email;
+	private String mail;
 	private String cpfOrCnpj;
 	private Integer type;
 
@@ -57,11 +57,11 @@ public class Client implements Serializable {
 		addProfile(Profile.CLIENT);
 	}
 
-	public Client(Integer id, String name, String email, String cpfOrCnpj, TypeClient type, String password) {
+	public Client(Integer id, String name, String mail, String cpfOrCnpj, TypeClient type, String password) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.email = email;
+		this.mail = mail;
 		this.cpfOrCnpj = cpfOrCnpj;
 		this.type = (type == null) ? null : type.getCod();
 		this.password = password;
@@ -84,12 +84,12 @@ public class Client implements Serializable {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
 	public String getCpfOrCnpj() {

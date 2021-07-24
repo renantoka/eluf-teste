@@ -37,9 +37,9 @@ public class ClientResource {
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@RequestMapping(value = "/email", method = RequestMethod.GET)
-	public ResponseEntity<Client> find(@RequestParam(value = "value") String email) {
-		Client obj = service.findByEmail(email);
+	@RequestMapping(value = "/mail", method = RequestMethod.GET)
+	public ResponseEntity<Client> find(@RequestParam(value = "value") String mail) {
+		Client obj = service.findByMail(mail);
 		return ResponseEntity.ok().body(obj);
 	}
 
@@ -81,7 +81,7 @@ public class ClientResource {
 	@RequestMapping(value = "/page", method = RequestMethod.GET)
 	public ResponseEntity<Page<ClientDTO>> findPage(@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "linePerPage", defaultValue = "24") Integer linesPerPage,
-			@RequestParam(value = "orderBy", defaultValue = "nome") String orderBy,
+			@RequestParam(value = "orderBy", defaultValue = "name") String orderBy,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction) {
 
 		Page<Client> list = service.findPage(page, linesPerPage, orderBy, direction);

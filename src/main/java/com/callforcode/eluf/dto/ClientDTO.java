@@ -22,7 +22,7 @@ public class ClientDTO implements Serializable {
 	
 	@NotEmpty(message = "Please, fill in the required fields")
 	@Email(message = "The e-mail is invalid")
-	private String email;
+	private String mail;
 
 	public ClientDTO() {
 
@@ -31,7 +31,7 @@ public class ClientDTO implements Serializable {
 	public ClientDTO(Client obj) {
 		id = obj.getId();
 		name = obj.getName();
-		email = obj.getEmail();
+		mail = obj.getMail();
 	}
 
 	public Integer getId() {
@@ -50,12 +50,12 @@ public class ClientDTO implements Serializable {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
 
