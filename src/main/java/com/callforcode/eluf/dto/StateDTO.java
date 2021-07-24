@@ -2,6 +2,8 @@ package com.callforcode.eluf.dto;
 
 import java.io.Serializable;
 
+import com.callforcode.eluf.model.State;
+
 
 
 public class StateDTO implements Serializable {
@@ -13,7 +15,7 @@ public class StateDTO implements Serializable {
 	public StateDTO() {
 	}
 
-	public StateDTO(StateDTO obj) {
+	public StateDTO(State obj) {
 		id = obj.getId();
 		name = obj.getName();
 	}
