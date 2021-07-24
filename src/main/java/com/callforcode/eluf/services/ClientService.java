@@ -26,6 +26,7 @@ import com.callforcode.eluf.model.enums.Profile;
 import com.callforcode.eluf.model.enums.TypeClient;
 import com.callforcode.eluf.repositories.AddressRepository;
 import com.callforcode.eluf.repositories.ClientRepository;
+import com.callforcode.eluf.security.UserSS;
 import com.callforcode.eluf.services.exceptions.AuthorizationException;
 import com.callforcode.eluf.services.exceptions.DataIntegrityException;
 import com.callforcode.eluf.services.exceptions.ObjectNotFoundException;
