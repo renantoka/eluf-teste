@@ -1,4 +1,4 @@
-package com.callforcode.eluf.service.validation;
+package com.callforcode.eluf.services.validation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import com.callforcode.eluf.model.Client;
 import com.callforcode.eluf.model.enums.TypeClient;
 import com.callforcode.eluf.repositories.ClientRepository;
 import com.callforcode.eluf.resources.exceptions.FieldMessage;
-import com.callforcode.eluf.service.validation.utils.BR;
+import com.callforcode.eluf.services.validation.utils.BR;
 
 
 

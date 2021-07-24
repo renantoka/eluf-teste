@@ -1,4 +1,4 @@
-package com.callforcode.eluf.service.validation;
+package com.callforcode.eluf.services.validation;
 
 import java.util.ArrayList;
 import java.util.List;

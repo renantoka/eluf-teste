@@ -1,4 +1,4 @@
-package com.callforcode.eluf.service.validation;
+package com.callforcode.eluf.services.validation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

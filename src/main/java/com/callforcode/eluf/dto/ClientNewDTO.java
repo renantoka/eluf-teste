@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.callforcode.eluf.service.validation.ClientInsert;
+import com.callforcode.eluf.services.validation.ClientInsert;
 
 @ClientInsert
 public class ClientNewDTO implements Serializable {
