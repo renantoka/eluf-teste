@@ -54,7 +54,7 @@ public class Client implements Serializable {
 	private List<Order> orders = new ArrayList<>();
 	
 	public Client() {
-		addPerfil(Profile.CLIENT);
+		addProfile(Profile.CLIENT);
 	}
 
 	public Client(Integer id, String name, String email, String cpfOrCnpj, TypeClient type, String password) {
@@ -65,7 +65,7 @@ public class Client implements Serializable {
 		this.cpfOrCnpj = cpfOrCnpj;
 		this.type = (type == null) ? null : type.getCod();
 		this.password = password;
-		addPerfil(Profile.CLIENT);
+		addProfile(Profile.CLIENT);
 	}
 
 	public Integer getId() {
