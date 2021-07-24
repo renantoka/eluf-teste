@@ -22,6 +22,7 @@ import com.callforcode.eluf.dto.ClientNewDTO;
 import com.callforcode.eluf.model.Address;
 import com.callforcode.eluf.model.City;
 import com.callforcode.eluf.model.Client;
+import com.callforcode.eluf.model.enums.Profile;
 import com.callforcode.eluf.model.enums.TypeClient;
 import com.callforcode.eluf.repositories.AddressRepository;
 import com.callforcode.eluf.repositories.ClientRepository;
