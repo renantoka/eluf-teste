@@ -120,7 +120,7 @@ public class Client implements Serializable {
 		return profiles.stream().map(x -> Profile.toEnum(x)).collect(Collectors.toSet());
 	}
 
-	public void addPerfil(Profile profile) {
+	public void addProfile(Profile profile) {
 		profiles.add(profile.getCod());
 	}
 

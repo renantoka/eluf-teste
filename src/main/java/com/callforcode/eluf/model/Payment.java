@@ -53,11 +53,11 @@ public  abstract class Payment implements Serializable {
 		return PaymentStatus.toEnum(status);
 	}
 
-	public void setEstado(PaymentStatus status) {
+	public void setState(PaymentStatus status) {
 		this.status = status.getCod();
 	}
 
-	public Order getorder() {
+	public Order getOrder() {
 		return order;
 	}
 

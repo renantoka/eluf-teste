@@ -13,5 +13,5 @@ import com.callforcode.eluf.model.Order;
 public interface OrderRepository extends JpaRepository<Order, Integer> {
 
 	@Transactional(readOnly=true)
-	Page<Order> findByCliente(Client client, Pageable pageRequest);
+	Page<Order> findByClient(Client client, Pageable pageRequest);
 }
