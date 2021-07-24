@@ -12,9 +12,9 @@ public class MockEmailService extends AbstractEmailService {
 	
 	@Override
 	public void sendEmail(SimpleMailMessage msg) {
-	LOG.info("Simulando envio de email da ELUF...");
+	LOG.info("Simulating ELUF email sending...");
 	LOG.info(msg.toString());
-	LOG.info("Email da ELUF Enviado");
+	LOG.info("ELUF Email Sent");
 		
 	}
 

@@ -28,7 +28,7 @@ public abstract class AbstractEmailService implements MailService {
 		SimpleMailMessage sm = new SimpleMailMessage();
 		sm.setTo(obj.getClient().getEmail());
 		sm.setFrom(sender);
-		sm.setSubject("Pedido confirmado! Código: " + obj.getId());
+		sm.setSubject("Order confirmed! Code: " + obj.getId());
 		sm.setSentDate(new Date(System.currentTimeMillis()));
 		sm.setText(obj.toString());
 		return sm;
@@ -44,9 +44,9 @@ public abstract class AbstractEmailService implements MailService {
 		SimpleMailMessage sm = new SimpleMailMessage();
 		sm.setTo(client.getEmail());
 		sm.setFrom(sender);
-		sm.setSubject("Solicitação de nova senha");
+		sm.setSubject("Request for a new password");
 		sm.setSentDate(new Date(System.currentTimeMillis()));
-		sm.setText("Nova senha: " + newPass);
+		sm.setText("new password: " + newPass);
 		return sm;
 	}
 

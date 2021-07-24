@@ -59,12 +59,12 @@ public class ClientService {
 
 		UserSS user = UserService.authenticated();
 		if (user == null || !user.hasRole(Profile.ADMIN) && !id.equals(user.getId())) {
-			throw new AuthorizationException("Acesso negado");
+			throw new AuthorizationException("Access denied");
 		}
 
 		Optional<Client> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
-				"Objeto não encontrado! Id: " + id + ", Tipo: " + Client.class.getName()));
+				"Object not found! Id: " + id + ", Type: " + Client.class.getName()));
 	}
 
 	@Transactional
@@ -87,7 +87,7 @@ public class ClientService {
 		try {
 			repo.deleteById(id);
 		} catch (DataIntegrityViolationException e) {
-			throw new DataIntegrityException("Não é possivel excluir porque há entidades relacionadas");
+			throw new DataIntegrityException("Cannot delete because there are related entities");
 		}
 	}
 
@@ -97,13 +97,13 @@ public class ClientService {
 	public Client findByEmail(String email) {
 		UserSS user = UserService.authenticated();
 		if (user == null || !user.hasRole(Profile.ADMIN) && !email.equals(user.getUsername())) {
-			throw new AuthorizationException("Acesso negado");
+			throw new AuthorizationException("Access denied");
 		}
 
 		Client obj = repo.findByEmail(email);
 		if (obj == null) {
 			throw new ObjectNotFoundException(
-					"Objeto não encontrado! Id: " + user.getId() + ", Tipo: " + Client.class.getName());
+					"Object not found! Id: " + user.getId() + ", Type: " + Client.class.getName());
 		}
 		return obj;
 	}
@@ -148,7 +148,7 @@ public class ClientService {
 	public URI uploadProfilePicture(MultipartFile multipartFile) {
 		UserSS user = UserService.authenticated();
 		if(user == null) {
-			throw new AuthorizationException("Acesso negado");
+			throw new AuthorizationException("Access denied");
 		}
 		
 		BufferedImage jpgImage = imageService.getJpgImageFromFile(multipartFile);
