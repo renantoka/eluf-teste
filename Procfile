@@ -1,1 +1,1 @@
-web: java -cp target/classes/:target/dependency/* com.callforcode.eluf.ElufApplication
+web: java -cp target/classes/:target/dependency/* com.callforcode.ElufApplication
