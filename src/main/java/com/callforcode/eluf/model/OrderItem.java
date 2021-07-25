@@ -5,10 +5,11 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
+@Entity
 public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 

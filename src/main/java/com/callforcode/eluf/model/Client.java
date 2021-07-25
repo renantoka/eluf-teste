@@ -11,6 +11,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ import com.callforcode.eluf.model.enums.Profile;
 import com.callforcode.eluf.model.enums.TypeClient;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
+@Entity
 public class Client implements Serializable {
 	private static final long serialVersionUID = 1L;
 
