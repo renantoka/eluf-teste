@@ -8,6 +8,9 @@ import org.springframework.mail.SimpleMailMessage;
 import com.callforcode.eluf.model.Client;
 import com.callforcode.eluf.model.Order;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public abstract class AbstractMailService implements MailService {
 
 	@Value("${default.sender}")
